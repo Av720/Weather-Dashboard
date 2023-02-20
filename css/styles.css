@@ -7,7 +7,11 @@ body {
 }
 
 header {
-  background-image: linear-gradient(to right, rgb(48, 241, 241), rgb(221, 164, 174));
+  background-image: linear-gradient(
+    to right,
+    rgb(48, 241, 241),
+    rgb(221, 164, 174)
+  );
   padding: 20px;
   text-align: center;
   font-family: "Merriweather", serif;
@@ -15,12 +19,16 @@ header {
   font-size: 2rem;
 }
 
+.search-header {
+  font-family: "Merriweather", serif;
+  margin:10px 0 10px 0;
+  font-weight: bold;
+}
 
-
-.fa-sun{ 
-    padding-left: 80px;
+.fa-sun {
+  padding-left: 80px;
 }
 
 .fa-cloud {
-    padding-right: 80px;
+  padding-right: 80px;
 }
