@@ -1,0 +1,9 @@
+1. Connect css and bootstrap 
+2. Create a header using bootstrap titled "Weather dashboard" 
+3. Display Flex box . Search city on the lft and weatherforrecast on the right 
+4. Create H1 " Search for a city"
+5. Create a box for the searh box 
+6. Create H1 for city and current date : (Denver ( Date format 2/19/2023) and weather icon for the current day 
+7. Create temp, wind and humidity P tags 
+8. Create 5 cards for the weather forecast 
+9. 5 cards must contain date, weather icon, temp, wind and humidity 
