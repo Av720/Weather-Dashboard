@@ -34,29 +34,32 @@
 
     <!-- FONTAWESOME  -->
 
-        <script src="https://kit.fontawesome.com/5c22034e45.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/5c22034e45.js"
+      crossorigin="anonymous"
+    ></script>
 
-<!-- TITLE  -->
+    <!-- TITLE  -->
 
     <title>Weather</title>
-
   </head>
 
   <!-- HEADER  -->
 
-  <header><i class="fa-solid fa-cloud"></i>Weather Dashboard
+  <header>
+    <i class="fa-solid fa-cloud"></i>Weather Dashboard
 
     <i class="fa-solid fa-sun"></i>
-
-
-</header>
+  </header>
   <body>
+
+    <!-- Search Criteria header  -->
     <div class="container search-container">
       <div class="container">
         <h3 class="search-header">Search a City:</h3>
         <div class="search-text">
+<!-- ------------------------------------------------------------------->
           <!-- create an input and seach box for the criteria -->
-
           <input type="text" id="search-id"search-input" placeholder="city name"
           >
           <button type="button" id="searchBtn" class="btn search">
@@ -64,6 +67,29 @@
           </button>
         </div>
       </div>
+<!-- ------------------------------------------------------------------->
+
+      <!-- create an empty div for the history search -->
+<div class="search-history-list">
+
+</div>
+<!-- ------------------------------------------------------------------->
+
+        <!-- create a hidden div with all the criteria that contains for the weather  -->
+
+<div class="criteria-hidden" > 
+    <h2 id= "city-info"><img id="weather-icon"></h2>
+    <p id="temperature"></p>
+    <p id="humidity"></p>
+    <p id="wind"></p>
+    <p id="uv-index"></p>
+</div>
+
+
+
+      </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

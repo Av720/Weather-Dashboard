@@ -21,7 +21,7 @@ header {
 
 .search-header {
   font-family: "Merriweather", serif;
-  margin:10px 0 10px 0;
+  margin:10px 0px 10px 0;
   font-weight: bold;
 }
 
@@ -31,4 +31,15 @@ header {
 
 .fa-cloud {
   padding-right: 80px;
+}
+
+
+.serach-text {
+
+margin-left: 15px;
+
+}
+
+#search-id {
+    margin left: 15px;
 }
