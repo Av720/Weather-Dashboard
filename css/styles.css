@@ -1,45 +1,49 @@
 * {
   margin: 0px;
 }
+/* ------------------------------------------------------------------------------ */
 
 body {
-  background-color: azure;
+  background-color: rgb(183, 213, 213);
 }
+/* ------------------------------------------------------------------------------ */
 
 header {
   background-image: linear-gradient(
     to right,
-    rgb(48, 241, 241),
-    rgb(221, 164, 174)
-  );
-  padding: 20px;
+    rgb(71, 228, 228),
+    rgb(46, 173, 93));
+  padding: 30px;
   text-align: center;
   font-family: "Merriweather", serif;
   font-weight: 900;
   font-size: 2rem;
 }
+/* ------------------------------------------------------------------------------ */
 
-.search-header {
-  font-family: "Merriweather", serif;
-  margin:10px 0px 10px 0;
-  font-weight: bold;
-}
-
+/* top header  icons */
 .fa-sun {
   padding-left: 80px;
+  color: rgb(170, 142, 32);
 }
 
 .fa-cloud {
   padding-right: 80px;
+  color: rgb(0, 145, 255);
+}
+/* ------------------------------------------------------------------------------ */
+
+/* search box and text  */
+.search-header {
+  font-family: "Merriweather", serif;
+  font-size: 1.5rem;
+  margin: 10px 0px 10px 0;
+  font-weight: bold;
+  margin-left: 15px;
+}
+.search-text {
+  margin-left: 15px;
 }
 
+/* ------------------------------------------------------------------------------ */
 
-.serach-text {
-
-margin-left: 15px;
-
-}
-
-#search-id {
-    margin left: 15px;
-}
