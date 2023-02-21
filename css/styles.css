@@ -4,7 +4,7 @@
 /* ------------------------------------------------------------------------------ */
 
 body {
-background-color: rgb(199, 158, 158);
+background-color: rgb(196, 181, 181);
 }
 
 /* ------------------------------------------------------------------------------ */
@@ -12,9 +12,9 @@ background-color: rgb(199, 158, 158);
 header {
   background-image: linear-gradient(
     to right,
+        rgb(16, 94, 28),
     rgb(46, 173, 93),
-    rgb(71, 228, 228),
-    rgb(46, 173, 93));
+rgb(16, 94, 28));
   padding: 30px;
   text-align: center;
   font-family: "Merriweather", serif;
@@ -31,7 +31,15 @@ header {
 
 .fa-cloud {
   padding-right: 80px;
-  color: rgb(0, 145, 255);
+  color: rgb(113, 175, 223);
+}
+
+.fa-sun:hover {
+    color: yellow;
+}
+
+.fa-cloud:hover {
+    color: rgb(9, 218, 233);
 }
 /* ------------------------------------------------------------------------------ */
 
