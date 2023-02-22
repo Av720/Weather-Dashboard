@@ -4,13 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-        <!-- BOOTSTRAP LINK -->
 
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-              integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- BOOTSTRAP LINK -->
 
-    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
 
     <!-- CSS STYLESSHEET  -->
     <link rel="stylesheet" href="css/styles.css" />
@@ -47,53 +49,72 @@
     <i class="fa-solid fa-sun"></i>
   </header>
   <body>
-
     <!-- Search Criteria header  -->
     <div class="container search-container">
       <div class="container">
         <h3 class="search-header">Search a City:</h3>
         <div class="search-text">
-<!-- ------------------------------------------------------------------->
+          <!-- ------------------------------------------------------------------->
           <!-- create an input and seach box for the criteria -->
           <input type="text" id="search-id"search-input" placeholder="city name"
           >
           <!-- search button -->
           <button type="button" id="searchBtn" class="btn search">
             <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
-          </button> <br>
+          </button>
+          <br />
 
           <!-- clear button  -->
-          <button class="btn clear"  type="submit" id="clear-button">Clear History</button>
+          <button
+            class="btn clear"
+            style="width: 25%"
+            type="submit"
+            id="clear-button"
+          >
+            Clear History
+          </button>
         </div>
       </div>
-<!-- ------------------------------------------------------------------->
+      <!-- ------------------------------------------------------------------->
 
       <!-- create an empty div for the history search -->
-<div class="search-history-list">
-
-</div>
-<!-- ------------------------------------------------------------------->
-
-        <!-- create a hidden div with all the criteria that contains for the weather  -->
-
-<div class="criteria-hidden" > 
-    <h2 id= "city-info"><img id="weather-icon"></h2>
-    <p id="temperature"></p>
-    <p id="humidity"></p>
-    <p id="wind"></p>
-    <p id="uv-index"></p>
-</div>
-
-
-
-
-
+      <div class="search-history-list">
+        <!-- this will be empty for the list to go here  -->
       </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+      <!-- ------------------------------------------------------------------->
 
+      <!-- create a hidden div with all the criteria that contains for the weather  -->
+
+      <div class="row all-conditions" id="mainConditions">
+        <!-- all criteria will go here -->
+      </div>
+
+      <!-- create a div for the 5 day forecast . Use Bootstrap for the flex box-->
+
+      <!-- 5 day forecast header -->
+      <div class="row 5day" id="5DayForecastHeader"></div>
+
+      <!-- 5 day forecast criteria  -->
+      <div
+        class="d-flex flex-row flex-wrap justify-content-between"
+        id="5Daycriteria"
+      ></div>
+      <!-- 5 day forecast will go here  -->
+    </div>
+
+    <!-- ------------------------------------------------------------------->
+
+    <!-- jquery script link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!-- bootstrap script link -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- main js file script -->
     <script src="script.js"></script>
   </body>
 </html>

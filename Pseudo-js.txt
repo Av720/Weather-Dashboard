@@ -1,8 +1,8 @@
 1. Create var apiKey = Key 
 2. Create variables for the DOM elements 
 3. Creat a function to save the data into local storage
-4. 
-5.
+4. Create a function to fetch the weather 
+5. Create different variables for each criteria (5day forecast) 
 6.
 7.
 8.
