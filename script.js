@@ -8,10 +8,6 @@ var windEl = document.querySelector("#wind");
 var uvIndexEl = document.querySelector("#uv-index");
 var requestUrl = "https://api.openweathermap.org/data/2.5/forecast?";
 
-function searchApi(searchIdEl) {
-  if (!searchIdEl) {
-    return;
-  }
 
   var cityLatEl = $(this).attr("searchIdEl").q.lat;
   var cityLonEl = $(this).attr("searchIdEl").q.lon;
