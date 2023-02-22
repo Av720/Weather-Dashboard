@@ -1,0 +1,14 @@
+1. Create var apiKey = Key 
+2. Create variables for the DOM elements 
+3. Creat a function to save the data into local storage
+4. 
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
