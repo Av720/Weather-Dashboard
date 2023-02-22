@@ -4,17 +4,19 @@
 /* ------------------------------------------------------------------------------ */
 
 body {
-background-color: rgb(196, 181, 181);
+background-color: rgb(206, 206, 245);
 }
 
 /* ------------------------------------------------------------------------------ */
 
 header {
-  background-image: linear-gradient(
+ 
+  background-color: rgb(10, 140, 140);
+  /* background-image: linear-gradient(
     to right,
         rgb(16, 94, 28),
     rgb(46, 173, 93),
-rgb(16, 94, 28));
+rgb(16, 94, 28)); */
   padding: 30px;
   text-align: center;
   font-family: "Merriweather", serif;
@@ -49,24 +51,43 @@ rgb(16, 94, 28));
   font-size: 1.5rem;
   margin: 10px 0px 10px 0;
   font-weight: bold;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 .search-text {
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 #search-id {
     font-size: 1rem;
     font-family: "Merriweather", serif;
-    padding: 5px;
+    padding: 4.5px;
 }
+
+
+/* .search {
+  background-color: teal;
+    border-color: teal;
+}  */
 
 /* ------------------------------------------------------------------------------ */
 
-/* search button  */
+/* clear history button  */
 
-.search {
-padding: 8px 5px 10px 10px;
-    color: white;
-    background-color: rgb(10, 76, 76);
+.clear {
+  margin-left: 0px;
+  margin-top: 15px;
+}
+
+.clear, .search {
+  background-color: teal;
+  color: white;
+  
+} 
+
+/* hover  */
+
+.clear:hover, .search:hover {
+  background-color: rgb(129, 129, 251);
+  color: white;
+
 }
