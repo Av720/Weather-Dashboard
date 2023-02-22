@@ -1,14 +1,11 @@
 1. Create var apiKey = Key 
 2. Create variables for the DOM elements 
-3. Creat a function to save the data into local storage
-4. Create a function to fetch the weather 
-5. Create different variables for each criteria (5day forecast) 
-6.
-7.
-8.
-9.
-10.
-11.
-12.
-13.
-14.
+3. fetch request (API)
+4. create elements & add in parameters to display from API
+5. append to DOM 
+6. event listener (Search button) - local storage (two mini projects ago)
+7. create a function to save the data into local storage
+8. getItem from local Storage to append cities that have been searched
+
+Ice Box:
+1. Clear History button
