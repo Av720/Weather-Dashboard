@@ -22,7 +22,21 @@ function getCurrentWeather(searchInput) {
     })
     .then(function (data) {
       console.log(data);
+      getFutureWeather(data);
     });
+    
+    function getFutureWeather(data) {
+    var lat = data.coord.lat;
+    var lon = data.coord.lon;
+    var requestFutureUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey + "&units=imperial";
+  fetch(requestFutureUrl)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data);
+  })
 }
 
+}
 searchBtnEl.addEventListener("click", getCurrentWeather);
