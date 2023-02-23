@@ -22,12 +22,12 @@ function getCurrentWeather(searchInput) {
     })
     .then(function (data) {
       console.log(data);
-      getFutureWeather();
+      getFutureWeather(data);
     });
     
     function getFutureWeather(data) {
-    var lat = coord[0];
-    var lon = coord[1];
+    var lat = data.coord.lat;
+    var lon = data.coord.lon;
     var requestFutureUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey + "&units=imperial";
   fetch(requestFutureUrl)
   .then(function (response) {
