@@ -4,13 +4,12 @@
 /* ------------------------------------------------------------------------------ */
 
 body {
-background-color: rgb(206, 206, 245);
+  background-color: rgb(206, 206, 245);
 }
 
 /* ------------------------------------------------------------------------------ */
 
 header {
- 
   background-color: rgb(10, 140, 140);
   /* background-image: linear-gradient(
     to right,
@@ -37,11 +36,11 @@ rgb(16, 94, 28)); */
 }
 
 .fa-sun:hover {
-    color: yellow;
+  color: yellow;
 }
 
 .fa-cloud:hover {
-    color: rgb(9, 218, 233);
+  color: rgb(9, 218, 233);
 }
 /* ------------------------------------------------------------------------------ */
 
@@ -58,11 +57,10 @@ rgb(16, 94, 28)); */
 }
 
 #search-id {
-    font-size: 1rem;
-    font-family: "Merriweather", serif;
-    padding: 4.5px;
+  font-size: 1rem;
+  font-family: "Merriweather", serif;
+  padding: 4.5px;
 }
-
 
 /* .search {
   background-color: teal;
@@ -78,16 +76,16 @@ rgb(16, 94, 28)); */
   margin-top: 15px;
 }
 
-.clear, .search {
+.clear,
+.search {
   background-color: teal;
   color: white;
-  
-} 
+}
 
 /* hover  */
 
-.clear:hover, .search:hover {
+.clear:hover,
+.search:hover {
   background-color: rgb(129, 129, 251);
   color: white;
-
 }
