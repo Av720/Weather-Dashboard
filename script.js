@@ -35,6 +35,7 @@ function getCurrentWeather(searchInput) {
       currentHumEl.textContent = "Humidity: " + data.main.humidity + "%";
 
       getFutureWeather(data);
+      addButton(data);
     });
 
   function getFutureWeather(data) {
@@ -55,6 +56,13 @@ function getCurrentWeather(searchInput) {
       .then(function (data) {
         console.log(data);
       });
+  }
+
+  function addButton(data) {
+    var buttonEl = document.createElement("button");
+    buttonEl.textContent = data.name;
+
+    historyList.appendChild(buttonEl);
   }
 }
 searchBtnEl.addEventListener("click", getCurrentWeather);
