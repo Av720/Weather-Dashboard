@@ -6,8 +6,14 @@ var humidityEl = document.querySelector("#humidity");
 var windEl = document.querySelector("#wind");
 var uvIndexEl = document.querySelector("#uv-index");
 var apiKey = "2efa42872fdfe44cc2d10f0d272593c5";
+var currentDisplay = document.querySelector(".current-display");
+var currentHeaderEl = document.querySelector("#current-header");
+var currentTempEl = document.querySelector("#current-temp");
+var currentWindEl = document.querySelector("#current-wind");
+var currentHumEl = document.querySelector("#current-humidity");
 
 function getCurrentWeather(searchInput) {
+  var today = dayjs().format("MM/DD/YYYY");
   var searchInput = document.querySelector("#search-id").value;
   var requestCurrentURL =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -22,6 +28,12 @@ function getCurrentWeather(searchInput) {
     })
     .then(function (data) {
       console.log(data);
+
+      currentHeaderEl.textContent = data.name + " " + today;
+      currentTempEl.textContent = "Temp: " + data.main.temp + "°F";
+      currentWindEl.textContent = "Wind: " + data.wind.speed + " MPH";
+      currentHumEl.textContent = "Humidity: " + data.main.humidity + "%";
+
       getFutureWeather(data);
     });
 
