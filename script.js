@@ -54,6 +54,7 @@ function getCurrentWeather(searchInput) {
     }
 
 }
+
 searchBtnEl.addEventListener("click", getCurrentWeather);
 
 
