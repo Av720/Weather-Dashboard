@@ -6,23 +6,13 @@ var humidityEl = document.querySelector("#humidity");
 var windEl = document.querySelector("#wind");
 var uvIndexEl = document.querySelector("#uv-index");
 var apiKey = "2efa42872fdfe44cc2d10f0d272593c5";
+var currentDisplay = document.querySelector(".current-display");
+var currentHeaderEl = document.querySelector("#current-header");
+var currentTempEl = document.querySelector("#current-temp");
+var currentWindEl = document.querySelector("#current-wind");
+var currentHumEl = document.querySelector("#current-humidity");
 
 function getCurrentWeather(searchInput) {
-    var searchInput = document.querySelector("#search-id").value;
-    var requestCurrentURL =
-        "https://api.openweathermap.org/data/2.5/weather?q=" +
-        searchInput +
-        "&appid=" +
-        apiKey +
-        "&units=imperial";
-    fetch(requestCurrentURL)
-        .then(function (response) {
-            console.log(response);
-            return response.json();
-        })
-        .then(function (data) {
-            console.log(data);
-        });
     var searchInput = document.querySelector("#search-id").value;
     var requestCurrentURL =
         "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -53,6 +43,12 @@ function getCurrentWeather(searchInput) {
             })
     }
 
+    function addButton(data) {
+        var buttonEl = document.createElement("button");
+        buttonEl.textContent = data.name;
+
+        historyList.appendChild(buttonEl);
+    }
 }
 
 searchBtnEl.addEventListener("click", getCurrentWeather);
