@@ -11,6 +11,7 @@ var currentHeaderEl = document.querySelector("#current-header");
 var currentTempEl = document.querySelector("#current-temp");
 var currentWindEl = document.querySelector("#current-wind");
 var currentHumEl = document.querySelector("#current-humidity");
+var historyList = document.querySelector(".search-history-list");
 
 function getCurrentWeather(searchInput) {
   var today = dayjs().format("MM/DD/YYYY");
@@ -55,14 +56,29 @@ function getCurrentWeather(searchInput) {
       })
       .then(function (data) {
         console.log(data);
+      
+        // for(var i = 0; i < 5; i ++){
+        // var date = new Date(data.list[((i+1)*8)].dt_txt);
+        // var dayOne = dayjs(data.list[0].dt_txt).format("ddd, MMM D");
+        // var temp = $(".first-temperature").text("Temp: " + data.list[i].main.temp + " F");
+        // $(".first-date").html("<h6>" + dayOne + "</h6>");
+        // $(".first-icon").html("<img src='https://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png' alt='Icon depicting current weather.'>");
+        // $(".first-wind").text("Wind: " + data.list[i].wind.speed + "MPH")
+        // $(".first-humidity").text("Humidity: " + data.list[i].main.humidity + "%");
+        // }
       });
-  }
+    }
 
-  function addButton(data) {
+  
+    function addButton(data) {
     var buttonEl = document.createElement("button");
     buttonEl.textContent = data.name;
+
 
     historyList.appendChild(buttonEl);
   }
 }
-searchBtnEl.addEventListener("click", getCurrentWeather);
+searchBtnEl.addEventListener("click", function() {
+  var storedCity = document.querySelector("#search-id");
+  localStorage.getItem(storedCity, getCurrentWeather());
+});
