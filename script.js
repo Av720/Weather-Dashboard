@@ -8,6 +8,7 @@ var uvIndexEl = document.querySelector("#uv-index");
 var apiKey = "2efa42872fdfe44cc2d10f0d272593c5";
 var currentDisplay = document.querySelector(".current-display");
 var currentHeaderEl = document.querySelector("#current-header");
+var currentIconEl = document.querySelector("#current-icon");
 var currentTempEl = document.querySelector("#current-temp");
 var currentWindEl = document.querySelector("#current-wind");
 var currentHumEl = document.querySelector("#current-humidity");
@@ -30,7 +31,13 @@ function getCurrentWeather(searchInput) {
     .then(function (data) {
       console.log(data);
 
+      var iconCode = data.weather[0].icon;
+      var iconUrl = "https://openweathermap.org/img/wn/" + iconCode + ".png";
       currentHeaderEl.textContent = data.name + " " + today;
+      currentIconEl.setAttribute("src", iconUrl);
+      // var iconDisplay = document.createElement("img");
+      // iconDisplay.textContent =
+      // currentHeaderEl.appendChild(iconDisplay);
       currentTempEl.textContent = "Temp: " + data.main.temp + "°F";
       currentWindEl.textContent = "Wind: " + data.wind.speed + " MPH";
       currentHumEl.textContent = "Humidity: " + data.main.humidity + "%";
