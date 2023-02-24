@@ -12,11 +12,30 @@ var currentIconEl = document.querySelector("#current-icon");
 var currentTempEl = document.querySelector("#current-temp");
 var currentWindEl = document.querySelector("#current-wind");
 var currentHumEl = document.querySelector("#current-humidity");
-var historyList = document.querySelector(".search-history-list");
+var historyList = $(".search-history-list");
+var storedCity = document.querySelector("#search-id");
+var storedArray = [];
 
-function getCurrentWeather(searchInput) {
+function renderButtons() {
+  var tempArray = localStorage.getItem("cities");
+  if (tempArray) {
+    storedArray = JSON.parse(tempArray);
+    for (const city of storedArray) {
+      addButton(city);
+    }
+  }
+}
+
+function getCurrentWeather(event, history) {
   var today = dayjs().format("MM/DD/YYYY");
-  var searchInput = document.querySelector("#search-id").value;
+  var searchInput;
+  if (history === true) {
+    searchInput = event.target.innerText;
+  } else {
+    searchInput = document.querySelector("#search-id").value;
+    addButton(searchInput);
+  }
+
   var requestCurrentURL =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     searchInput +
@@ -43,7 +62,9 @@ function getCurrentWeather(searchInput) {
       currentHumEl.textContent = "Humidity: " + data.main.humidity + "%";
 
       getFutureWeather(data);
-      addButton(data);
+
+      storedArray.push(data.name);
+      localStorage.setItem("cities", JSON.stringify(storedArray));
     });
 
   function getFutureWeather(data) {
@@ -85,17 +106,28 @@ function getCurrentWeather(searchInput) {
         }
       });
   }
-
-  function addButton(data) {
-    var buttonEl = document.createElement("button");
-    buttonEl.textContent = data.name;
-
-    historyList.appendChild(buttonEl);
-  }
 }
-searchBtnEl.addEventListener("click", getCurrentWeather);
 
-//searchBtnEl.addEventListener("click", function() {
+function addButton(name) {
+  var buttonEl = $("<button>");
+  buttonEl.text(name);
+  buttonEl.addClass("newHistory form-control d-block btn-primary");
+
+  historyList.append(buttonEl);
+  $(".newHistory").on("click", function (event) {
+    console.log("historyTrigger");
+    getCurrentWeather(event, true);
+  });
+}
+
+searchBtnEl.addEventListener("click", function (event) {
+  console.log("searchTrigger");
+  getCurrentWeather(event, false);
+});
+
+renderButtons();
+
+// searchBtnEl.addEventListener("click", function() {
 //  var storedCity = document.querySelector("#search-id");
-//  localStorage.getItem(storedCity, getCurrentWeather());
-//});
+//  localStorage.setItem(storedCity, getCurrentWeather());
+// });
