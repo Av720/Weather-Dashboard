@@ -56,7 +56,7 @@ function getCurrentWeather(searchInput) {
       })
       .then(function (data) {
         console.log(data);
-      
+
         // for(var i = 0; i < 5; i ++){
         // var date = new Date(data.list[((i+1)*8)].dt_txt);
         // var dayOne = dayjs(data.list[0].dt_txt).format("ddd, MMM D");
@@ -67,18 +67,18 @@ function getCurrentWeather(searchInput) {
         // $(".first-humidity").text("Humidity: " + data.list[i].main.humidity + "%");
         // }
       });
-    }
+  }
 
-  
-    function addButton(data) {
+  function addButton(data) {
     var buttonEl = document.createElement("button");
     buttonEl.textContent = data.name;
-
 
     historyList.appendChild(buttonEl);
   }
 }
-searchBtnEl.addEventListener("click", function() {
-  var storedCity = document.querySelector("#search-id");
-  localStorage.getItem(storedCity, getCurrentWeather());
-});
+searchBtnEl.addEventListener("click", getCurrentWeather);
+
+//searchBtnEl.addEventListener("click", function() {
+//  var storedCity = document.querySelector("#search-id");
+//  localStorage.getItem(storedCity, getCurrentWeather());
+//});
