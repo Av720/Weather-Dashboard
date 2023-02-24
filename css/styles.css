@@ -89,3 +89,8 @@ rgb(16, 94, 28)); */
   background-color: rgb(129, 129, 251);
   color: white;
 }
+
+.card {
+  font-family: "Merriweather", serif;
+  background-color: rgb(23, 182, 182);
+}

@@ -57,15 +57,25 @@ function getCurrentWeather(searchInput) {
       .then(function (data) {
         console.log(data);
 
-        // for(var i = 0; i < 5; i ++){
-        // var date = new Date(data.list[((i+1)*8)].dt_txt);
-        // var dayOne = dayjs(data.list[0].dt_txt).format("ddd, MMM D");
-        // var temp = $(".first-temperature").text("Temp: " + data.list[i].main.temp + " F");
-        // $(".first-date").html("<h6>" + dayOne + "</h6>");
-        // $(".first-icon").html("<img src='https://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png' alt='Icon depicting current weather.'>");
-        // $(".first-wind").text("Wind: " + data.list[i].wind.speed + "MPH")
-        // $(".first-humidity").text("Humidity: " + data.list[i].main.humidity + "%");
-        // }
+        for (i = 0; i < 5; i++) {
+          var date = new Date(
+            data.list[(i + 1) * 8 - 1].dt * 1000
+          ).toLocaleDateString();
+          var iconCode = data.list[(i + 1) * 8 - 1].weather[0].icon;
+          var iconUrl =
+            "https://openweathermap.org/img/wn/" + iconCode + ".png";
+          var temp = data.list[(i + 1) * 8 - 1].main.temp;
+          var wind = data.list[(i + 1) * 8 - 1].wind.speed;
+          var humidity = data.list[(i + 1) * 8 - 1].main.humidity;
+          // console.log(date);
+          // console.log(wind);
+          // console.log(humidity);
+          $(".date" + i).html(date);
+          $(".icon" + i).html("<img src=" + iconUrl + ">");
+          $(".temperature" + i).html("Temp: " + temp + "&#8457");
+          $(".wind" + i).html("Wind: " + wind + " MPH");
+          $(".humidity" + i).html("Humidity: " + humidity + "%");
+        }
       });
   }
 
