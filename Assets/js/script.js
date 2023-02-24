@@ -127,7 +127,3 @@ searchBtnEl.addEventListener("click", function (event) {
 
 renderButtons();
 
-// searchBtnEl.addEventListener("click", function() {
-//  var storedCity = document.querySelector("#search-id");
-//  localStorage.setItem(storedCity, getCurrentWeather());
-// });
