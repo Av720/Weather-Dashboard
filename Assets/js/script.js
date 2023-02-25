@@ -1,3 +1,4 @@
+//Declare global variables.
 var searchBtnEl = document.querySelector("#searchBtn");
 var clearBtnEl = document.querySelector("#clear-button");
 var cityInfoEl = document.querySelector("#city-info");
@@ -16,6 +17,8 @@ var historyList = $(".search-history-list");
 var storedCity = document.querySelector("#search-id");
 var storedArray = [];
 
+//Get data from localStorage and renders each city to the page in a button element on page load.
+//Use JSON.parse() to return a string pulled from storage back to a normal JSON object.
 function renderButtons() {
   var tempArray = localStorage.getItem("cities");
   if (tempArray) {
@@ -36,6 +39,8 @@ function getCurrentWeather(event, history) {
     addButton(searchInput);
   }
 
+  //Use the third-party API, OpenWeather, to retrieve current and future weather conditions.
+  //Use string concatination to complete URL by inserting user input (a city) and the API Key stored in a global variable.
   var requestCurrentURL =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     searchInput +
@@ -63,10 +68,12 @@ function getCurrentWeather(event, history) {
 
       getFutureWeather(data);
 
+      //Use JSON.stringify to turn an object into a string for local storage.
       storedArray.push(data.name);
       localStorage.setItem("cities", JSON.stringify(storedArray));
     });
 
+  //Use string concatination to complete forecast URL by inserting latitude and longitude returned in data from the above funtion.
   function getFutureWeather(data) {
     var lat = data.coord.lat;
     var lon = data.coord.lon;
@@ -85,6 +92,7 @@ function getCurrentWeather(event, history) {
       .then(function (data) {
         console.log(data);
 
+        //Iterate through returned data to display temperature, icon, wind speed and humidity values on DOM.
         for (i = 0; i < 5; i++) {
           var date = new Date(
             data.list[(i + 1) * 8 - 1].dt * 1000
@@ -126,4 +134,3 @@ searchBtnEl.addEventListener("click", function (event) {
 });
 
 renderButtons();
-
